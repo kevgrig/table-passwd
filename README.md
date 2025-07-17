@@ -78,3 +78,25 @@ The conversion to the stdio table protocol was done by
 Omar Polo &lt;[op@openbsd.org](mailto:op@openbsd.org)&gt;.
 
 OpenBSD 7.5 - April 4, 2024
+
+# How to install
+
+First, you need to clone the repository:
+
+    $ git clone https://github.com/OpenSMTPD/table-passwd
+
+Secondly, you need to bootstrap the repository (some dependencies [autotools, libtool] may be needed):
+
+    $ sh bootstrap
+
+Then, you need to configure, for example:
+
+    $ ./configure --prefix=/usr
+
+Finally build and install:
+
+    $ make
+    # make smtpdir=/usr/libexec/opensmtpd install
+
+The addon will be installed in /usr/libexec/opensmtpd where OpenSMTPD can find it.
+
